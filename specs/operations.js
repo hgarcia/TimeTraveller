@@ -36,22 +36,22 @@ vows.describe('Operate with dates')
         },
         'When calling addMinutes with a positive value':{
             topic: function (timeTraveller) {
-                return timeTraveller.now().addMinutes(120);
+                return timeTraveller.now().addMinutes(10);
             },
             'should return a date as many minutes in the future' : function (date) {
                 var actual = new Date().getMinutes();
                 var modified = date.getMinutes();
-                (modified - actual).should.equal(120);
+                (modified - actual).should.equal(10);
             }
         },
         'When calling addMinutes with a negative value':{
             topic: function (timeTraveller) {
-                return timeTraveller.now().addMinutes(-120);
+                return timeTraveller.now().addMinutes(-10);
             },
             'should return a date as many minutes in the pass' : function (date) {
                 var actual = new Date().getMinutes();
                 var modified = date.getMinutes();
-                (actual- modified).should.equal(120);
+                (actual- modified).should.equal(10);
             }
         }
     }
