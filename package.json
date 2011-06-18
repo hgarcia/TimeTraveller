@@ -1,0 +1,13 @@
+{
+  "name": "timeTraveller",
+  "version": "0.1.0",
+  "author": "Hernan Garcia <hernan@dynamicprogrammer.com>",
+  "main": "./lib/timetraveller.js",
+  "description": "Time Traveller provides a set of utility methods to deal with dates. From adding and substracting, to formatting. Time Traveller only extends date objects that it creates, without polluting the global namespace.",
+  "keywords": ["date", "time", "formmatting"],
+  "repository": {
+      "type": "git",
+      "url": "https://hgarcia@github.com/hgarcia/TimeTraveller.git"
+  },
+  "engines": {"node": ">= 0.2.0" }
+}
