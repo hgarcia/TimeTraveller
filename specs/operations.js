@@ -83,4 +83,33 @@ vows.describe('Operate with dates')
     }
 })
 
+
+.addBatch({
+    'Given a timeTraveller object':{
+        topic: function () {
+            return new TimeTraveller();
+        },
+        'When calling addHours with a positive value':{
+            topic: function (timeTraveller) {
+                return timeTraveller.now().addHours(2);
+            },
+            'should return a date as many hours in the future' : function (date) {
+                var actual = new Date().getHours();
+                var modified = date.getHours();
+                (modified - actual).should.equal(2);
+            }
+        },
+        'When calling addHours with a negative value':{
+            topic: function (timeTraveller) {
+                return timeTraveller.now().addHours(-1);
+            },
+            'should return a date as many hours in the pass' : function (date) {
+                var actual = new Date().getHours();
+                var modified = date.getHours();
+                (actual- modified).should.equal(1);
+            }
+        }
+    }
+})
+
 .export(module);
