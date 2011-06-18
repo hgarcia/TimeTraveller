@@ -89,6 +89,34 @@ vows.describe('Operate with dates')
         topic: function () {
             return new TimeTraveller();
         },
+        'When calling addYears with a positive value':{
+            topic: function (timeTraveller) {
+                return timeTraveller.now().addYears(20);
+            },
+            'should return a date as many years in the future' : function (date) {
+                var actual = new Date().getFullYear();
+                var modified = date.getFullYear();
+                (modified - actual).should.equal(20);
+            }
+        },
+        'When calling addYears with a negative value':{
+            topic: function (timeTraveller) {
+                return timeTraveller.now().addYears(-20);
+            },
+            'should return a date as many years in the pass' : function (date) {
+                var actual = new Date().getFullYear();
+                var modified = date.getFullYear();
+                (actual- modified).should.equal(20);
+            }
+        }
+    }
+})
+
+.addBatch({
+    'Given a timeTraveller object':{
+        topic: function () {
+            return new TimeTraveller();
+        },
         'When calling addHours with a positive value':{
             topic: function (timeTraveller) {
                 return timeTraveller.now().addHours(2);
