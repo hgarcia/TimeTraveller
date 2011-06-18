@@ -55,4 +55,32 @@ vows.describe('Operate with dates')
     }
 })
 
+.addBatch({
+    'Given a timeTraveller object':{
+        topic: function () {
+            return new TimeTraveller();
+        },
+        'When calling addMonths with a positive value':{
+            topic: function (timeTraveller) {
+                return timeTraveller.now().addMonths(12);
+            },
+            'should return a date as many months in the future' : function (date) {
+                var actual = new Date().getYear();
+                var modified = date.getYear();
+                (modified - actual).should.equal(1);
+            }
+        },
+        'When calling addMonths with a negative value':{
+            topic: function (timeTraveller) {
+                return timeTraveller.now().addMonths(-12);
+            },
+            'should return a date as many months in the pass' : function (date) {
+                var actual = new Date().getYear();
+                var modified = date.getYear();
+                (actual- modified).should.equal(1);
+            }
+        }
+    }
+})
+
 .export(module);
