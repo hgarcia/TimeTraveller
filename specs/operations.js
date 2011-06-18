@@ -34,6 +34,34 @@ vows.describe('Operate with dates')
         topic: function () {
             return new TimeTraveller();
         },
+        'When calling addMilliseconds with a positive value':{
+            topic: function (timeTraveller) {
+                return timeTraveller.now().addMilliseconds(120000);
+            },
+            'should return a date as many milliseconds in the future' : function (date) {
+                var actual = new Date().getMinutes();
+                var modified = date.getMinutes();
+                (modified - actual).should.equal(2);
+            }
+        },
+        'When calling addMilliseconds with a negative value':{
+            topic: function (timeTraveller) {
+                return timeTraveller.now().addMilliseconds(-120000);
+            },
+            'should return a date as many milliseconds in the pass' : function (date) {
+                var actual = new Date().getMinutes();
+                var modified = date.getMinutes();
+                (actual- modified).should.equal(2);
+            }
+        }
+    }
+})
+
+.addBatch({
+    'Given a timeTraveller object':{
+        topic: function () {
+            return new TimeTraveller();
+        },
         'When calling addSeconds with a positive value':{
             topic: function (timeTraveller) {
                 return timeTraveller.now().addSeconds(120);
