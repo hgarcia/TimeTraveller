@@ -92,22 +92,30 @@ vows.describe('Operate with dates')
         },
         'When calling addMinutes with a positive value':{
             topic: function (timeTraveller) {
-                return timeTraveller.now().addMinutes(10);
+                return timeTraveller.now().addMinutes(60);
             },
             'should return a date as many minutes in the future' : function (date) {
-                var actual = new Date().getMinutes();
-                var modified = date.getMinutes();
-                (modified - actual).should.equal(10);
+                var actual = new Date().getHours();
+                var modified = date.getHours();
+                if (actual === 23) {
+                    modified.should.equal(0);
+                } else {
+                    (modified - actual).should.equal(1);
+                }
             }
         },
         'When calling addMinutes with a negative value':{
             topic: function (timeTraveller) {
-                return timeTraveller.now().addMinutes(-10);
+                return timeTraveller.now().addMinutes(-60);
             },
             'should return a date as many minutes in the pass' : function (date) {
-                var actual = new Date().getMinutes();
-                var modified = date.getMinutes();
-                (actual- modified).should.equal(10);
+                var actual = new Date().getHours();
+                var modified = date.getHours();
+                if (actual === 0) {
+                    modified.should.equal(23);
+                } else {
+                    (actual - modified).should.equal(1);
+                }
             }
         }
     }
@@ -120,12 +128,16 @@ vows.describe('Operate with dates')
         },
         'When calling addHours with a positive value':{
             topic: function (timeTraveller) {
-                return timeTraveller.now().addHours(2);
+                return timeTraveller.now().addHours(1);
             },
             'should return a date as many hours in the future' : function (date) {
                 var actual = new Date().getHours();
                 var modified = date.getHours();
-                (modified - actual).should.equal(2);
+                if (actual === 23) {
+                    modified.should.equal(0);   
+                } else {
+                    (modified - actual).should.equal(1);
+                }
             }
         },
         'When calling addHours with a negative value':{
@@ -135,7 +147,11 @@ vows.describe('Operate with dates')
             'should return a date as many hours in the pass' : function (date) {
                 var actual = new Date().getHours();
                 var modified = date.getHours();
-                (actual- modified).should.equal(1);
+                if (actual === 0) {
+                    modified.should.equal(23);
+                } else {
+                    (actual- modified).should.equal(1);
+                }
             }
         }
     }
