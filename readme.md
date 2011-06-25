@@ -1,15 +1,15 @@
-h2. Time Traveller
+# Time Traveller
 
 A library to work with date and time.
 
-h3. Purpose
+## Purpose
 
 Time traveller is my attempt to provide a better api to work with date and time operations.
 My hope is to grow this library to make working with dates as enjoyable as possible.
 
-h3. Objects
+## Objects
 
-h4. TimeTraveller
+### TimeTraveller
 
 Factory object to extend Date with some utility methods to do comparison and perform common operations on dates. 
 
@@ -21,27 +21,22 @@ The returned date object is enhanced with some utility methods as described belo
 + COMPLETE METHOD DOCUMENTATION
 +++++++++++++++++
 
-h4. TimeSpan
+### TimeSpan
 
 A simple object tha represents a period of time. As of version 0.2.1 a TimeSpan object can be created in 3 ways.
 
-<em>Calling the differenceFrom(secondDate) method on an enhanced Date object.</em>
+Calling the differenceFrom(secondDate) method on an enhanced Date object.
 
-<code>
-var d = new TimeTraveller().now();
 
-var ts = d.differenceFrom(new Date()); 
+    var d = new TimeTraveller().now();
+    var ts = d.differenceFrom(new Date());
 
-</code>
 
-<em>Passing milliseconds into the constructor</em>
+Passing milliseconds into the constructor:
 
-<code>
-var ts = new TimeSpan(1300);
-</code>
+    var ts = new TimeSpan(1300);
 
-<em>Passing two dates into the contructor</em>
+Passing two dates into the contructor
 
-<code>
-var ts = new TimeSpan(date, secondDate);
-</code>
+    var ts = new TimeSpan(date, secondDate);
+
