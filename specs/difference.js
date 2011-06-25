@@ -1,14 +1,14 @@
 var should = require('should'), 
     assert = require('assert'), 
-    TimeTraveller = require('../lib/timetraveller'),
+    tt = require('../lib/timetraveller'),
     vows = require('vows');
 
 vows.describe('Compares to other dates')
 
 .addBatch({
     'Given a new date by a time traveller object': {
-        topic: function () {
-            return new TimeTraveller().now();
+        topic: function () {            
+            return new tt.TimeTraveller().now();
         }, 
         'When I diff to another date without a precision': {
             topic: function (date) {

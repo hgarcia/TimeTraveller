@@ -1,6 +1,6 @@
 var should = require('should'), 
     assert = require('assert'), 
-    TimeTraveller = require('../lib/timetraveller'),
+    tt = require('../lib/timetraveller'),
     vows = require('vows');
 
 vows.describe('Operate with dates')
@@ -8,7 +8,7 @@ vows.describe('Operate with dates')
 .addBatch({
     'Given a time traveller object': {
         topic: function () {
-            return new TimeTraveller();
+            return new tt.TimeTraveller();
         }, 
         'When I get a new date object': {
             topic: function (timeTraveller) {
@@ -32,7 +32,7 @@ vows.describe('Operate with dates')
 .addBatch({
     'Given a timeTraveller object':{
         topic: function () {
-            return new TimeTraveller();
+            return new tt.TimeTraveller();
         },
         'When calling addMilliseconds with a positive value':{
             topic: function (timeTraveller) {
@@ -60,7 +60,7 @@ vows.describe('Operate with dates')
 .addBatch({
     'Given a timeTraveller object':{
         topic: function () {
-            return new TimeTraveller();
+            return new tt.TimeTraveller();
         },
         'When calling addSeconds with a positive value':{
             topic: function (timeTraveller) {
@@ -88,7 +88,7 @@ vows.describe('Operate with dates')
 .addBatch({
     'Given a timeTraveller object':{
         topic: function () {
-            return new TimeTraveller();
+            return new tt.TimeTraveller();
         },
         'When calling addMinutes with a positive value':{
             topic: function (timeTraveller) {
@@ -124,7 +124,7 @@ vows.describe('Operate with dates')
 .addBatch({
     'Given a timeTraveller object':{
         topic: function () {
-            return new TimeTraveller();
+            return new tt.TimeTraveller();
         },
         'When calling addHours with a positive value':{
             topic: function (timeTraveller) {
@@ -160,7 +160,7 @@ vows.describe('Operate with dates')
 .addBatch({
     'Given a time traveller object': {
         topic: function () {
-            return new TimeTraveller();
+            return new tt.TimeTraveller();
         }, 
         'When calling addDays with a positive value': {
             topic: function (timeTraveller) {
@@ -187,7 +187,7 @@ vows.describe('Operate with dates')
 .addBatch({
     'Given a timeTraveller object':{
         topic: function () {
-            return new TimeTraveller();
+            return new tt.TimeTraveller();
         },
         'When calling addMonths with a positive value':{
             topic: function (timeTraveller) {
@@ -216,7 +216,7 @@ vows.describe('Operate with dates')
 .addBatch({
     'Given a timeTraveller object':{
         topic: function () {
-            return new TimeTraveller();
+            return new tt.TimeTraveller();
         },
         'When calling addYears with a positive value':{
             topic: function (timeTraveller) {
