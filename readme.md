@@ -25,18 +25,18 @@ The returned date object is enhanced with some utility methods as described belo
 
 A simple object tha represents a period of time. As of version 0.2.1 a TimeSpan object can be created in 3 ways.
 
-Calling the differenceFrom(secondDate) method on an enhanced Date object.
+#### Calling the differenceFrom(secondDate) method on an enhanced Date object.
 
 
     var d = new TimeTraveller().now();
     var ts = d.differenceFrom(new Date());
 
 
-Passing milliseconds into the constructor:
+#### Passing milliseconds into the constructor:
 
     var ts = new TimeSpan(1300);
 
-Passing two dates into the contructor
+#### Passing two dates into the contructor
 
     var ts = new TimeSpan(date, secondDate);
 
