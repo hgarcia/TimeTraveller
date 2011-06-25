@@ -28,7 +28,8 @@ A simple object tha represents a period of time. As of version 0.2.1 a TimeSpan 
 <em>Calling the differenceFrom(secondDate) method on an enhanced Date object.</em>
 
 <code>
-var d = new TimeTraveller().now();<br/>
+var d = new TimeTraveller().now();
+
 var ts = d.differenceFrom(new Date()); 
 
 </code>
