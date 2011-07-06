@@ -17,9 +17,47 @@ As of version 0.2.1 only has a now() factory method that's equivalent to doing n
 
 The returned date object is enhanced with some utility methods as described below.
 
-+++++++++++++++++
-+ COMPLETE METHOD DOCUMENTATION
-+++++++++++++++++
+#### add methods
+
+The available add methods are:
+
+	addYears
+	addMonths
+	addDays
+	addHours
+	addMinutes
+	addSeconds
+	addMilliseconds
+
+These methods can take either a positive or a negative number. A negative number will result in the substraction of the given period.
+
+For example:
+
+	var d = new TimeTraveller().now(); 
+	console.log(d); //Mon, 04 Jul 2011 23:03:22 GMT
+	d.addYears(2);
+	console.log(d); //Thu, 04 Jul 2013 23:03:22 GMT
+	d.addYears(-4);
+	console.log(d); //Thu, 04 Jul 2009 23:03:22 GMT
+
+#### isSame methods	
+
+There is a main isSame method that takes and can also have a single character that indicates precision.
+
+	var d = new TimeTraveller().now();
+	
+
+There are also methods for every precision that make a cleaner API.
+
+	isSameSecond
+	isSameMinute
+	isSameHour
+	isSameDay
+	isSameMonth
+	isSameYear
+	isSame
+
+
 
 ### TimeSpan
 
