@@ -16,6 +16,6 @@
     "should": ""
   },
   "scripts": {
-    "test" : "vows --spec"
+    "test" : "vows spec/*.js --spec"
   }
 }
