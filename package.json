@@ -10,5 +10,12 @@
       "type": "git",
       "url": "https://github.com/hgarcia/TimeTraveller.git"
   },
-  "engines": {"node": ">= 0.2.0" }
+  "engines": {"node": ">= 0.2.0" },
+  "devDependencies": {
+    "vows" : "~0.5.9",
+    "should": ""
+  },
+  "scripts": {
+    "test" : "vows --spec"
+  }
 }
